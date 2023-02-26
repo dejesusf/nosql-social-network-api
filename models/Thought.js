@@ -1,5 +1,31 @@
-const { Schema, model } = require('mongoose');
+const {Schema, model} = require('mongoose');
 
+// subdocument
+const reactionSchema = new Schema (
+  {
+    reactionBody: {
+      type: String,
+      required: true,
+      maxlength: 280,
+    },
+    username: {
+      type: String,
+      required: true,
+    },
+    createdAt: {
+      type: Date,
+      defualt: Date.now,
+      // TODO: getter method to format the timestamp
+    }
+  },
+  {
+    toJSON: {
+      getters: true,
+    }
+  }
+)
+
+// parent document
 const thoughtSchema = new Schema (
   {
     thoughtText: {
@@ -29,30 +55,6 @@ const thoughtSchema = new Schema (
   }
 );
 
-const reactionSchema = new Schema (
-  {
-    reactionBody: {
-      type: String,
-      required: true,
-      maxlength: 280,
-    },
-    username: {
-      type: String,
-      required: true,
-    },
-    createdAt: {
-      type: Date,
-      defualt: Date.now,
-      // TODO: getter method to format the timestamp
-    }
-  },
-  {
-    toJSON: {
-      getters: true,
-    }
-  }
-)
-
 // reactionCount virtual property
 thoughtSchema
   .virtual('reactionCount')
@@ -61,4 +63,5 @@ thoughtSchema
 })
 
 const Thought = model('thought', thoughtSchema);
-module.exports(Thought);
+
+module.exports = Thought;

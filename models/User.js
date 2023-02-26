@@ -12,7 +12,7 @@ const userSchema = new Schema (
       type: String,
       unique: true,
       required: true,
-      // matching validation
+      // TODO: matching validation
     },
     thoughts: [
       {
@@ -43,4 +43,4 @@ userSchema
 })
 
 const User = model('user', userSchema);
-module.exports(User);
+module.exports = User;
