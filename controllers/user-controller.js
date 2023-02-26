@@ -46,16 +46,16 @@ module.exports = {
       .catch((err) => res.status(500).json(err))
   },
   // DELETE user by _id
-  deleteUser(req, res) {
-    User.findOneAndDelete(
-      {
-        _id: req.params.UserId
-      },
-    ).then(() => res.json({message: 'User has been deleted.'}))
-    .catch((err) => res.status(500).json(err))
-  },
-  // TODO: BONUS: remove a user's associated thought when deleted
-  deleteUsersThoughts(req, res) {
+  // deleteUser(req, res) {
+  //   User.findOneAndDelete(
+  //     {
+  //       _id: req.params.UserId
+  //     },
+  //   ).then(() => res.json({message: 'User has been deleted.'}))
+  //   .catch((err) => res.status(500).json(err))
+  // },
+  // BONUS: remove a user's associated thought when deleted
+  deleteUserAndThoughts(req, res) {
     User.findOneAndDelete(
       {
         _id: req.params.userId
