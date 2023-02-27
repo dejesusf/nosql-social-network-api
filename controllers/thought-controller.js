@@ -24,15 +24,16 @@ module.exports = {
       .then((thought) => {
         return User.findOneAndUpdate(
           {
-            username: req.body.username
+            username: req.body.username,
+            thoughtText: req.body.thoughtText
           },
           {
             $addToSet: {
               thoughts: thought.id
             }
           }
-        ).then((user) => {
-          if (user) {
+        ).then((thought) => {
+          if (thought) {
             return res.status(200).json(`${username}'s thought has been created.`)
           }
           return res.status(404).json('Thought formed but user was not found')  
@@ -65,7 +66,7 @@ module.exports = {
   deleteThought(req, res) {
     Thought.findOneAndDelete(
       {
-        _id: req.params.ThoughtId
+        _id: req.params.thoughtId
       },
     ).then(() => res.json({message: 'Thought has been deleted.'}))
     .catch((err) => res.status(500).json(err))

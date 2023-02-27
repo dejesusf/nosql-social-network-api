@@ -14,7 +14,7 @@ const reactionSchema = new Schema (
     },
     createdAt: {
       type: Date,
-      defualt: Date.now,
+      default: Date.now,
       // TODO: getter method to format the timestamp
     }
   },
@@ -36,7 +36,7 @@ const thoughtSchema = new Schema (
     },
     createdAt: {
       type: Date,
-      defualt: Date.now,
+      default: Date.now,
       // TODO: getter method to format the timestamp
     },
     username: {
