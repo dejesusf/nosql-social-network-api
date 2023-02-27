@@ -2,7 +2,9 @@
 
 ## Description
 
-With the use of the npm package, Express, wer're able to create an application that the user may use to save and delete notes. Learning to use express was pretty complex. There were parts that took a while to understand but overall, I was glad to make this application work! Luckily, Express uses a similar forumla and syntax for the routing which over time, got easier to use.
+By using Mongoose and MongoDB, I was tasked to create a Social Network API where a user can be created, updated, and deleted and their thoughts can also be created, updated, and deleted. There are also added features where friends can be added to the user's friends list and reactions can be made under a thought post. This application is not deployed as it is an API, so if you would like to see how to use this, please watch the video linked [HERE](https://drive.google.com/file/d/1zcRyfLdGaHjPX-noXzpxzN5oCCV_H3Kq/view?usp=sharing).
+
+Unfortunatly, there is an issue with the reaction route and it deletes all associated reactions instead of just the single reaction indicated by its id.
 
 ## Table of Contents
 - [License](#license)
@@ -14,13 +16,12 @@ With the use of the npm package, Express, wer're able to create an application t
 ![License Badge](https://img.shields.io/static/v1?label=license&message=None&color=blue)
 
 ## Installation
-Upon copying this repo, please install the required packages with ``npm i``
+Upon copying this repo, please install the required packages with ``npm i``.
     
 ## Usage
-Please click "Get Started" to start writing, saving, and deleting notes.
+This is intended to be used with the appllication: Insomnia. Here is a [video walkthrough](https://drive.google.com/file/d/1zcRyfLdGaHjPX-noXzpxzN5oCCV_H3Kq/view?usp=sharing) on how to use this application.
 
-OPTIONAL: To add a screenshot, use the relative filepath and add it here using the following syntax. If not, please delete this portion before finalizing your files.
-![alt text](images/screenshot.png)
+![screenshot of the Insomnia application](./assets/insomnia%20screenshot.png)
 
 ## Questions
 If there any questions, feel free to [email me](mailto:dejesusf@uw.edu). Don't be shy and visit my [GitHub Profile](https://github.com/dejesusf) to see other projects I'm working on.

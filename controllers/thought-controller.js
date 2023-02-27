@@ -102,7 +102,7 @@ module.exports = {
       {
         $pull: {
           reactions: {
-            _id: req.body.reactionId
+            reactionId: req.body.reactionId
           }
         }
       },
