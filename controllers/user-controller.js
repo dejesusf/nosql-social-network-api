@@ -62,7 +62,7 @@ module.exports = {
       }
     ).then((user) =>
     !user
-      ? res.status(404).json({message: 'There is no course with that ID!'})
+      ? res.status(404).json({message: 'There is no user with that ID!'})
       : Thought.deleteMany(
         {
           _id: {
@@ -70,25 +70,25 @@ module.exports = {
           }
         }
       )
-    ).then(() => res.json({message: "User's associated thoughts have been deleted."}))
+    ).then(() => res.json({message: 'User and their associated thoughts have been deleted.'}))
     .catch((err) => res.status(500).json(err));
   },
   // POST to add a new friend to friend's list
   addFriend(req, res) {
     User.findOneAndUpdate(
       {
-        _id: req.body.userId
+        _id: req.params.userId
       },
       {
-        $add: {
-          friends: req.body.userId
+        $addToSet: {
+          friends: req.params.friendId
         }
       },
       {
         runValidators: true,
         new: true,
       }
-    ).then((users) => res.json(users))
+    ).then(() => res.json('Friend has been added!'))
     .catch((err) => res.status(500).json(err))
   },
   // DELETE to remove a friend from friend's list

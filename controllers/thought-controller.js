@@ -27,7 +27,7 @@ module.exports = {
             username: req.body.username
           },
           {
-            $add: {
+            $addToSet: {
               thoughts: thought.id
             }
           }
@@ -77,7 +77,7 @@ module.exports = {
         _id: req.params.thoughtId
       },
       {
-        $add: {
+        $addToSet: {
           reactions: req.body
         }
       },
